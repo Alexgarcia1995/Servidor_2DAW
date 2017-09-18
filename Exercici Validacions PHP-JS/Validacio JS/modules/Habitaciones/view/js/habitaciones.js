@@ -24,22 +24,22 @@ jQuery.fn.fill_or_clean = function () {
                 }
             });
         }
-        $("#last_name").blur(function () {
-            if ($("#last_name").attr("value") == "") {
-                $("#last_name").attr("value", "Introduce last name");
+        $("#direccion").blur(function () {
+            if ($("#direccion").attr("value") == "") {
+                $("#direccion").attr("value", "Introduce last name");
             }
         });
-        if ($("#birth_date").attr("value") == "") {
-            $("#birth_date").attr("value", "Introduce date of birth");
-            $("#birth_date").focus(function () {
-                if ($("#birth_date").attr("value") == "Introduce date of birth") {
-                    $("#birth_date").attr("value", "");
+        if ($("#fecha_disponibilidad").attr("value") == "") {
+            $("#fecha_disponibilidad").attr("value", "Introduce date of birth");
+            $("#fecha_disponibilidad").focus(function () {
+                if ($("#fecha_disponibilidad").attr("value") == "Introduce date of birth") {
+                    $("#fecha_disponibilidad").attr("value", "");
                 }
             });
         }
-        $("#birth_date").blur(function () {
-            if ($("#birth_date").attr("value") == "") {
-                $("#birth_date").attr("value", "Introduce date of birth");
+        $("#fecha_disponibilidad").blur(function () {
+            if ($("#fecha_disponibilidad").attr("value") == "") {
+                $("#fecha_disponibilidad").attr("value", "Introduce date of birth");
             }
         });
         if ($("#title_date").attr("value") == "") {
@@ -149,19 +149,19 @@ $(document).ready(function () {
 
     $("#submit_user").click(function () {
         $(".error").remove();
-        if ($("#nombre_hotel").val() == "" || $("#nombre_hotel").val() == "Introduce nombre_hotel") {
-            $("#nombre_hotel").focus().after("<span class='error'>Introduce nombre_hotel</span>");
+        if ($("#name").val() == "" || $("#name").val() == "Introduce name") {
+            $("#name").focus().after("<span class='error'>Introduce name</span>");
             return false;
-        } else if (!string_reg.test($("#nombre_hotel").val())) {
-            $("#nombre_hotel").focus().after("<span class='error'>Name must be 2 to 30 letters</span>");
+        } else if (!string_reg.test($("#name").val())) {
+            $("#name").focus().after("<span class='error'>Name must be 2 to 30 letters</span>");
             return false;
         }
 
-        else if ($("#direccion").val() == "" || $("#direccion").val() == "Introduce last name") {
-            $("#direccion").focus().after("<span class='error'>Introduce last name</span>");
+        else if ($("#last_name").val() == "" || $("#last_name").val() == "Introduce last name") {
+            $("#last_name").focus().after("<span class='error'>Introduce last name</span>");
             return false;
-        } else if (!string_reg.test($("#direccion").val())) {
-            $("#direccion").focus().after("<span class='error'>Last name must be 2 to 30 letters</span>");
+        } else if (!string_reg.test($("#last_name").val())) {
+            $("#last_name").focus().after("<span class='error'>Last name must be 2 to 30 letters</span>");
             return false;
         }
 
@@ -235,7 +235,7 @@ $(document).ready(function () {
     });
 
     //realizamos funciones para que sea más práctico nuestro formulario
-    $("#name, #direccion").keyup(function () {
+    $("#name, #last_name").keyup(function () {
         if ($(this).val() != "" && string_reg.test($(this).val())) {
             $(".error").fadeOut();
             return false;
