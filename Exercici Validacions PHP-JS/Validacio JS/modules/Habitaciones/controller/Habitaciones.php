@@ -1,11 +1,12 @@
 <?php
 echo "<br>";
 echo "<br>";
+echo "<br>";
+echo "<br>";
 include 'modules/Habitaciones/utils/functions_Habitaciones.inc.php';
 
-if (isset($_POST['submit'])) {
+if ($_POST) {
     $result = validate();
-
     if ($result['resultado']) {
         $arrArgument = array(
             'Tipo' => ucfirst($result['datos']['Tipo']),

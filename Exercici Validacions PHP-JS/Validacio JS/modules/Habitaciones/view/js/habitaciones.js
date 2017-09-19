@@ -1,18 +1,17 @@
-//Crear un plugin
-
+//Crear un plugine
 jQuery.fn.fill_or_clean = function () {
     this.each(function () {
         if ($("#nombre_hotel").attr("value") == "") {
-            $("#nombre_hotel").attr("value", "Introduce nombre_hotel");
+            $("#nombre_hotel").attr("value", "Introduce nombre hotel");
             $("#nombre_hotel").focus(function () {
-                if ($("#nombre_hotel").attr("value") == "Introduce nombre_hotel") {
+                if ($("#nombre_hotel").attr("value") == "Introduce nombre hotel") {
                     $("#nombre_hotel").attr("value", "");
                 }
             });
         }
         $("#nombre_hotel").blur(function () { //Onblur se activa cuando el usuario retira el foco
             if ($("#nombre_hotel").attr("value") == "") {
-                $("#nombre_hotel").attr("value", "Introduce nombre_hotel");
+                $("#nombre_hotel").attr("value", "Introduce nombre hotel");
             }
         });
 
@@ -147,31 +146,34 @@ $(document).ready(function () {
     var string_reg = /^[A-Za-z]{2,30}$/;
     var usr_reg = /^[0-9a-zA-Z]{2,20}$/;
 
-    $("#submit_user").click(function () {
+    $("#submit").click(function () {
+
         $(".error").remove();
-        if ($("#name").val() == "" || $("#name").val() == "Introduce name") {
-            $("#name").focus().after("<span class='error'>Introduce name</span>");
+        if ($("#nombre_hotel").val() == "" || $("#nombre_hotel").val() == "Introduce nombre_hotel") {
+            $("#nombre_hotel").focus().after("<span class='error'>Introduce nombre_hotel</span>");
             return false;
-        } else if (!string_reg.test($("#name").val())) {
-            $("#name").focus().after("<span class='error'>Name must be 2 to 30 letters</span>");
+        } else if (!string_reg.test($("#nombre_hotel").val())) {
+            $("#nombre_hotel").focus().after("<span class='error'>Name must be 2 to 30 letters</span>");
+            return false;
+        }
+        else if ($("#fecha_disponibilidad").val() == "" || $("#fecha_disponibilidad").val() == "Introduce date of birth") {
+            $("#fecha_disponibilidad").focus().after("<span class='error'>Introduce date of birth</span>");
+            return false;
+        } else if (!date_reg.test($("#fecha_disponibilidad").val())) {
+            $("#fecha_disponibilidad").focus().after("<span class='error'>error format date (mm/dd/yyyy)</span>");
             return false;
         }
 
-        else if ($("#last_name").val() == "" || $("#last_name").val() == "Introduce last name") {
-            $("#last_name").focus().after("<span class='error'>Introduce last name</span>");
+        else if ($("#direccion").val() == "" || $("#direccion").val() == "Introduce last name") {
+            $("#direccion").focus().after("<span class='error'>Introduce last name</span>");
             return false;
-        } else if (!string_reg.test($("#last_name").val())) {
-            $("#last_name").focus().after("<span class='error'>Last name must be 2 to 30 letters</span>");
+        } else if (!string_reg.test($("#direccion").val())) {
+            $("#direccion").focus().after("<span class='error'>Last name must be 2 to 30 letters</span>");
             return false;
         }
 
-        else if ($("#birth_date").val() == "" || $("#birth_date").val() == "Introduce date of birth") {
-            $("#birth_date").focus().after("<span class='error'>Introduce date of birth</span>");
-            return false;
-        } else if (!date_reg.test($("#birth_date").val())) {
-            $("#birth_date").focus().after("<span class='error'>error format date (mm/dd/yyyy)</span>");
-            return false;
-        }
+        $('#form_1').attr("action","index.php?module=Habitaciones");
+/*
 
         else if ($("#title_date").val() == "" || $("#title_date").val() == "Introduce date of title") {
             $("#title_date").focus().after("<span class='error'>Introduce date of title</span>");
@@ -228,9 +230,7 @@ $(document).ready(function () {
             $("#conf_email").focus().after("<span class='error'>Email doesn't match.</span>");
             return false;
         }
-
-        $("#form_user").submit();
-        $("#form_user").attr("action", "index.php?module=users");
+*/
 
     });
 

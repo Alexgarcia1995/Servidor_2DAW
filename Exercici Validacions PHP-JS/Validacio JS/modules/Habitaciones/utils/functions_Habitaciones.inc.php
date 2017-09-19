@@ -1,4 +1,5 @@
 <?php
+echo "Hola";
 function validate() {
     $error = array();
     $valido = true;

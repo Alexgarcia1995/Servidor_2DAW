@@ -7,7 +7,7 @@
         </div>
         <div class="row contact-wrap">
             <div class="status alert alert-success" style="display: none"></div>
-            <form id="form_user" method="post">
+            <form id="form_1" method="post">
                 <div class="col-sm-5 col-sm-offset-1">
                       <!--<label>Name *</label>
                       <input type="text" name="name" placeholder="name" class="form-control" required="required" value="<?php
@@ -34,7 +34,7 @@
                   </div>
                   <div class="form-group">
                       <label>Nombre hotel</label>
-                      <input type="text" name="nombre_hotel" placeholder="Nombre hotel" class="form-control" required="required" value="<?php
+                      <input type="text" name="nombre_hotel" id="nombre_hotel" placeholder="Nombre hotel" class="form-control" required="required" value="<?php
                       if (!isset($error['nombre_hotel'])) {
                           echo $_POST ? $_POST['nombre_hotel'] : "";
                       }
@@ -72,8 +72,8 @@
                           ?></div>
                   </div>-->
                   <div class="form-group">
-                      <label>Direccion hotel*</label><br />
-                      <input id="direccion" type="text" name="direccion" placeholder="Street nXX ptaX" required="required" class="form-control"value="<?php
+                      <label>Direccion hotel</label><br />
+                      <input id="direccion" type="text" name="direccion" placeholder="Direccion hotel" required="required" class="form-control"value="<?php
                       if (!isset($error['direccion'])) {
                           echo $_POST ? $_POST['direccion'] : "";
                       }
@@ -98,7 +98,7 @@
                   </div>
 
                   <div class="form-group">
-                      <button type="submit" name="submit" class="btn btn-primary btn-lg" value="submit">Submit Message</button>
+                      <button type="submit" id="submit" name="submit" class="btn btn-primary btn-lg" value="submit">Submit Message</button>
                   </div>
                 </div>
             </form>
