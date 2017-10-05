@@ -29,7 +29,7 @@ function pintar_user(data) {
 
     var msje = document.createElement("div");
     msje.innerHTML = "msje = ";
-    msje.innerHTML += data.Tipo;
+    msje.innerHTML += data.user.Tipo;
 
     var name = document.createElement("div");
     name.innerHTML = "name = ";
