@@ -6,7 +6,15 @@
         </div>
         <div class="row contact-wrap">
             <div class="status alert alert-success" style="display: none"></div>
-            <div id="content"></div>
+            <div id="content">
+              <table>
+                <tr>
+                  <td height=500 width=500>
+                  <div id="data" height=auto width=auto ></div>
+                 </td>
+                </tr>
+              </table>
+            </div>
             <script type="text/javascript" src="modules/List_Coches/view/js/list_coches.js" ></script>
         </div><!--/.row-->
     </div><!--/.container-->

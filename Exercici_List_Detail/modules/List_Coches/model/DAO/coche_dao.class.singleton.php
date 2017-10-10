@@ -20,7 +20,7 @@ class cocheDAO {
       }
       public function list_coche_DAO($db,$data) {
           //echo "Pepe";
-          echo $data;
+          //echo $data;
           $sql = "SELECT * FROM vehiculo WHERE Matricula ='$data'"  ;
           $stmt= $db->ejecutar($sql);
           return $db->listar($stmt);

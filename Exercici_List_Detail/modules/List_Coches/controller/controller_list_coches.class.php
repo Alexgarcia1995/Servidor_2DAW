@@ -96,11 +96,18 @@ if (isset($_GET["load_coches"]) && $_GET["load_coches"] == true) {
     echo json_encode($arrValue);
     exit;
 }
+///////////////////////////////////////////////////////////// Scroll
+if (isset($_GET["scroll"]) && $_GET["scroll"] == true) {
+    $jsondata=array();
+    $jsondata["valor"]=1;
+    echo json_encode($jsondata);
+    exit;
+}
 ////////////////////// Details
 if (isset($_GET["load_coche"]) && $_GET["load_coche"] != "") {
     //$path_model = $_SERVER['DOCUMENT_ROOT'] . '/Servidor_2DAW/Exercici_List_Detail/modules/List_Coches/model/model/';
     //$arrValue = loadModel($path_model, "coche_model", "list_coches");
-    echo $_GET["load_coche"];
+    //echo $_GET["load_coche"];
     $_SESSION["id"] = $_GET["load_coche"];
     exit;
 }
