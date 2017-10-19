@@ -1,0 +1,11 @@
+RewriteEngine on
+RewriteBase /Servidor_2DAW/Exercici_Framework/
+
+RewriteCond %{REQUEST_FILENAME} !-f
+Rewriterule ^(.*)/(.*)/(.*)$ index.php?module=$1&function=$2&aux=$3 [L,NC]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+Rewriterule ^(.*)/(.*)$ index.php?module=$1&function=$2 [L,NC]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+Rewriterule ^(.*)/$ index.php?module=$1 [L,NC]

@@ -19,8 +19,9 @@ function load_coches() {
 }
 function scroll() {
     var jqxhr = $.get("modules/List_Coches/controller/controller_list_coches.class.php?scroll=true", function (data) {
-        var datos = JSON.parse(data);
+        var datos = JSON.parse(data)
         limit+=datos.valor;
+        alert(limit);
         //console.log(json);
         pintar_coche(json,limit);
         //alert( "success" );
@@ -40,12 +41,14 @@ $(document).ready(function () {
     var limit;
     var i;
     load_coches();
+    $(window).scroll(function(){
+      if($(window).scrollTop() + $(window).height()+2 >= $(document).height()){
+        //alert("Hola");
+        scroll();
+       }
+    });
 });
-$(window).scroll(function(){
-  if($(window).scrollTop() + $(window).height()+2 >= $(document).height()){
-     scroll();
-     }
-});
+
 function pintar_coche(data, limit) {
     var content = document.getElementById("data");
     var div_user = document.createElement("div");
@@ -71,7 +74,8 @@ function pintar_coche(data, limit) {
       content.appendChild(div_user);
     }
     else {
-      var final=limit+limit
+      alert("i="+ i);
+      var final=limit;
       if (final>limites) {
         final=limites
       }

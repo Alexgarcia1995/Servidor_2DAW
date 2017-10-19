@@ -21,25 +21,24 @@ USE `rural_shop`;
 -- Table structure for table `users`
 --
 
-DROP TABLE IF EXISTS `users`;
+DROP TABLE IF EXISTS `vehiculo`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `users` (
-  `name` varchar(100) DEFAULT NULL,
-  `last_name` varchar(100) DEFAULT NULL,
-  `birth_date` varchar(10) DEFAULT NULL,
-  `title_date` varchar(45) DEFAULT NULL,
-  `email` varchar(100) DEFAULT NULL,
-  `address` varchar(100) DEFAULT NULL,
-  `user` varchar(50) NOT NULL,
-  `pass` varchar(100) DEFAULT NULL,
-  `en_lvl` varchar(45) DEFAULT NULL,
-  `Computing` tinyint(1) DEFAULT NULL,
-  `History` tinyint(1) DEFAULT NULL,
-  `Magic` tinyint(1) DEFAULT NULL,
-  `Music` tinyint(1) DEFAULT NULL,
+CREATE TABLE `vehiculo` (
+  `Tipo` varchar(100) DEFAULT NULL,
+  `marca` varchar(100) DEFAULT NULL,
+  `Matricula` varchar(10) DEFAULT NULL,
+  `Fecha_Compra` varchar(45) DEFAULT NULL,
+  `Potencia` varchar(100) DEFAULT NULL,
+  `Combustible` varchar(100) DEFAULT NULL,
+  `kilometraje` varchar(50) NOT NULL,
+  `Descripcion` varchar(100) DEFAULT NULL,
+  `ABS` tinyint(1) DEFAULT NULL,
+  `DSC` tinyint(1) DEFAULT NULL,
+  `ESP` tinyint(1) DEFAULT NULL,
+  `Direccion_asistida` tinyint(1) DEFAULT NULL,
   `avatar` varchar(200) DEFAULT NULL,
-  PRIMARY KEY (`user`)
+  PRIMARY KEY (`Matricula`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
